@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <p>some text</p>
+
+        <script type="text/javascript">
+
+            'use strict';
+
+            function CSS(selector) {
+                /* complete the class using the prototype to build the functions with chaining      */
+                this.selector = selector;
+
+            }
+            /* Add Prototype functions after this line */
+            CSS.prototype = {
+                'red': function () {
+                    document.querySelector(this.selector).style.color = 'red';
+                    return this;
+                },
+                'size': function (size) {
+                    document.querySelector(this.selector).style.fontSize = size;
+                    return this;
+                },
+                'bold': function () {
+                    document.querySelector(this.selector).style.strong = true;
+                    return this;
+                },
+                'underline': function () {
+                    document.querySelector(this.selector).style.underline = true;
+                    return this;
+
+                }
+            };
+
+
+            /* Do not change the code below.  Access the DOM object to change the styles */
+            var div = new CSS('div');
+            div.red().size('4em').bold().underline();
+
+        </script>
+
+    </body>
+</html>

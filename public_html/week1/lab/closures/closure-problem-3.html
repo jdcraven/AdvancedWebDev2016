@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Closure Problem 3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p>Open browser console</p>
+        
+        <script type="text/javascript">            
+            /* 
+            * Fix the console.log by replacing the single quotes in the 
+            * comparison with the correct value 
+            */ 
+            function outerRun(){ 
+              function innerRun(){
+            /* innerRun() is run before var be is run so the value for b is undefined */
+                console.log( a === 7 , 'What is the value of a.' ); 
+                console.log( b === undefined , 'What is the value of b.' ); 
+              }
+              var a = 7; 
+              innerRun(); 
+              var b = 8; 
+            } 
+            outerRun();
+        </script>
+    </body>
+</html>

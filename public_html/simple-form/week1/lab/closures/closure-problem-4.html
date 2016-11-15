@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Closure Problem 4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p>Open browser console</p>
+        
+        <script type="text/javascript">            
+            /* 
+            * Fix the console.log by replacing the single quotes in the 
+            * comparison with the correct value 
+            * Also add a comment explaining the reason for the answer
+            */ 
+            for ( var a = 0; a < 5; a++ ) {
+              setTimeout(function(){
+            /* for loop incriements a until 4 then adds once more final result of 5 */
+                console.log( a == 5, 'What is the value of a.' ); 
+              }, 100); 
+            }
+        </script>
+    </body>
+</html>

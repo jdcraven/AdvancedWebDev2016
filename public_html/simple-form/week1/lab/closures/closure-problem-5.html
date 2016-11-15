@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Closure Problem 5</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p>Open browser console</p>
+        
+        <script type="text/javascript">            
+         /* 
+        * Fix the loop with a closure so the console will display the correct value 
+        * you can move/add code if you need to(hint hint)
+        * It must use the setTimeout function to execute the console.log.
+
+        The expected output is
+        The Value of a is = 0
+        The Value of a is = 1
+        The Value of a is = 2 etc..
+
+        */ 
+       
+       /* Nested setTimeout into a function to keep variable to log*/
+        for ( var a = 0; a < 5; a++ ) { 
+            
+          blah(a);
+          
+        }
+        function blah(a) {
+         setTimeout(function(){ 
+              console.log( 'The Value of a is = ', a ); 
+          }, 100); // this statement must be intact
+        }
+        
+        </script>
+    </body>
+</html>

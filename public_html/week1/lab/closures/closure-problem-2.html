@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Closure Problem 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p>Open browser console</p>
+        
+        <script type="text/javascript">            
+           /* 
+            * Fix the console.log by replacing the single quotes in the 
+            * comparison with the correct value 
+            */
+            var a = 5; 
+            function executeMe(a){
+            /* Replaced '' with 6 the correct value of 'a' */
+             console.log( a === 6, 'What is the value of a.' ); 
+            } 
+            executeMe(6);
+        </script>
+    </body>
+</html>
+

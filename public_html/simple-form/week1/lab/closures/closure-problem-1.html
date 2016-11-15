@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CLosure Problem 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p>Open browser console</p>
+        
+        <script type="text/javascript">            
+           /* * Fix the console.log comparison so the value output is true. Do not remove any code. */ 
+            var globalNumber = 10; 
+            function addNumber(myNumber){ 
+                return globalNumber + myNumber; 
+            } 
+            globalNumber = 15;
+            /*Replace addNumber(5) with addNumber(0) makes the statement true*/
+            console.log( addNumber(0) === 15, 'The value should be true' );
+        </script>
+    </body>
+</html>
+
