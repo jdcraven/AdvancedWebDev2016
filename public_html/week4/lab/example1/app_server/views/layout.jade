@@ -2,14 +2,33 @@ doctype html
 html
   head
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title= title   
+    title= title 
+    link(rel='stylesheet', href='bootstrap/css/bootstrap.css')
     link(rel='stylesheet', href='/css/style.css')
-  p 
-    a(href="./form") Form |
-    a(href="./") Index |
-    a(href="./about") About
-  body
+
+  
+  div.container
+        nav.navbar.navbar-default( role="navigation" )
+            .navbar-header
+                button.navbar-toggle.collapsed( type="button", data-toggle="collapse", data-target="#navbar-inverse", aria-expanded="false", aria-controls="navbar")
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href="#") Lab 4
+
+                #navbar-inverse.collapse.navbar-collapse
+                    ul.nav.navbar-nav
+                        li: a(href="./") Index
+                        li: a(href="./form") Form 
+                        li: a(href="./about") About 
+    
+  body(style="padding-bottom:10rem;")
     .container
 
+    block content
+    
+    script(src='/javascripts/jquery-3.1.1.min.js')
+    script(src='/bootstrap/js/bootstrap.min.js')
 
-      block content
+      

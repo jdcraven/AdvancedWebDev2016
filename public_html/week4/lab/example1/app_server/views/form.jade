@@ -1,14 +1,19 @@
 extends layout
 
 block content
- h1=title 
- h2=message
- form.form-horizontal(action="/form", method="post", role="form")
-        .form-group
-          label.control-label(for="name") Name         
-            input#name.form-control(name="name")
-          label.control-label(for="email") Email
-            input#email.form-control(name="email")
-          label.control-label(for="comments") Comments
-            input#comments.form-control(name="comments")
-        input(type="submit" value="Submit") 
+
+  div.container.test.formstyle
+    
+    h1=title 
+    h2=message
+    form.form-vertical(action="/form", method="post", role="form")
+      .form-group
+        label.control-label(for="name") Name         
+         input#name.form-control(name="name")
+      .form-group
+        label.control-label(for="email") Email
+         input#email.form-control(name="email")
+      .form-group
+        label.control-label(for="comments") Comments
+         input#comments.form-control(name="comments")
+      input.btn.btn-default(type="submit" value="Submit") 
