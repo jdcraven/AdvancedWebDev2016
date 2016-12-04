@@ -35,12 +35,11 @@ block content
            input(type="hidden" name="_id" value="#{results._id}")
            input.btn.btn-default(type="submit" value="Update Employee")
     script.
-        var d = new Date("#{results.startDate}");
-        var day=("0" + d.getDate());
-        var month=("0" + (d.getMonth()+1));
-        var formatDate=#{results.startDate.getFullYear()}+"-"+(month)+"-"+(day);
-
-        document.getElementById("startDate").value=formatDate;    
+        
+        var test = new Date("#{results.startDate}");
+        var testdate = (test.toISOString()).substring(0,10);
+        
+        document.getElementById("startDate").value=testdate;    
        
         
          

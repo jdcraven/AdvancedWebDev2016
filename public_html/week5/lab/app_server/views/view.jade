@@ -19,16 +19,17 @@ block content
                     th 
                     th
             tbody
-            - each stuff in results
+            - each stuff in results             
                 tr
+                    
                     td 
                         = stuff.firstName
                     td 
                         = stuff.lastName
                     td
                         = stuff.department
-                    td 
-                        = stuff.startDate.toDateString()
+                    td                         
+                        = stuff.startDate.toDateString()                        
                     td
                         = stuff.jobTitle
                     td
@@ -39,3 +40,5 @@ block content
                         a(href="../update/#{stuff._id}") Update
                     td
                         a(href="../view/#{stuff._id}") Delete
+
+                
