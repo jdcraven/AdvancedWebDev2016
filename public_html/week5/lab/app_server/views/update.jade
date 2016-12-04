@@ -1,0 +1,46 @@
+extends layout
+
+block content
+  .formstyle
+    h1=title
+    
+    p
+      a(href="../view") View Employees
+    h2=message
+    form.form-vertical(action="/update", method="post", role="form")
+           .form-group
+             label.control-label(for="firstName") First Name:
+               input#firstName.form-control(name="firstName" value="#{results.firstName}")
+           .form-group
+             label.control-label(for="lastName") Last Name:
+               input#lastName.form-control(name="lastName" value="#{results.lastName}")
+           .form-group
+             label.control-label(for="department") Department:
+               select#department.form-control.input-sm(name="department")
+                 option(selected=results.department == "Ops") Ops
+                 option(selected=results.department == "Web Services") Web Services
+                 option(selected=results.department == "Administration") Administration
+                 option(selected=results.department == "Customer Service") Customer Service
+                 option(selected=results.department == "Sales") Sales
+                 option(selected=results.department == "Human Resources") Human Resources
+           .form-group
+             label.control-label(for="startDate") Start Date:
+               input#startDate.form-control(name="startDate" type="date")
+           .form-group
+             label.control-label(for="jobTitle") Job Title:
+               input#jobTitle.form-control(name="jobTitle" value="#{results.jobTitle}")
+           .form-group
+             label.control-label(for="salary") Salary:
+               input#salary.form-control(name="salary" type="number" value="#{results.salary}")
+           input(type="hidden" name="_id" value="#{results._id}")
+           input.btn.btn-default(type="submit" value="Update Employee")
+    script.
+        var d = new Date("#{results.startDate}");
+        var day=("0" + d.getDate());
+        var month=("0" + (d.getMonth()+1));
+        var formatDate=#{results.startDate.getFullYear()}+"-"+(month)+"-"+(day);
+
+        document.getElementById("startDate").value=formatDate;    
+       
+        
+         

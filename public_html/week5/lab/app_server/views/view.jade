@@ -1,0 +1,41 @@
+extends layout
+
+block content
+    h1=title
+    p
+        a(href="../") Add Employee
+    p=removed
+    div.table-responsive
+        table.table.table-bordered.table-striped.employeetablecss(border="1")
+            thead   
+                tr
+                    th First Name
+                    th Last Name
+                    th Department
+                    th Start Date
+                    th Job Title
+                    th Salary
+                    th Created On
+                    th 
+                    th
+            tbody
+            - each stuff in results
+                tr
+                    td 
+                        = stuff.firstName
+                    td 
+                        = stuff.lastName
+                    td
+                        = stuff.department
+                    td 
+                        = stuff.startDate.toDateString()
+                    td
+                        = stuff.jobTitle
+                    td
+                        = stuff.salary.toString()
+                    td 
+                        =stuff.createdOn.toDateString()
+                    td
+                        a(href="../update/#{stuff._id}") Update
+                    td
+                        a(href="../view/#{stuff._id}") Delete

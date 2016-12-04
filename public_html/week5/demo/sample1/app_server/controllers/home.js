@@ -9,7 +9,7 @@ module.exports.home = function(req, res){
     function successCB(){
          res.render('index', { 
             title: 'home',
-            message : 'Review Saved'
+            message : 'Employee Saved'
         });        
     }
     if (req.method === 'POST') {
