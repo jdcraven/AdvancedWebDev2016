@@ -1,0 +1,32 @@
+extends layout
+
+block content
+ .formstyle
+    h1=title 
+    h2=message
+    form.form-vertical(action="/add", method="post", role="form")
+           .form-group
+             label.control-label(for="firstName") First Name:
+               input#firstName.form-control(name="firstName")
+           .form-group
+             label.control-label(for="lastName") Last Name:
+               input#lastName.form-control(name="lastName")
+           .form-group
+             label.control-label(for="department") Department:
+               select#department.form-control.input-sm(name="department")
+                 option Ops
+                 option Web Services
+                 option Administration
+                 option Customer Service
+                 option Sales
+                 option Human Resources
+           .form-group
+             label.control-label(for="startDate") Start Date:
+               input#startDate.form-control(name="startDate" type="date")
+           .form-group
+             label.control-label(for="jobTitle") Job Title:
+               input#jobTitle.form-control(name="jobTitle")
+           .form-group
+             label.control-label(for="salary") Salary:
+               input#salary.form-control(name="salary" type="number")
+           input.btn.btn-default(type="submit" value="Add Employee") 

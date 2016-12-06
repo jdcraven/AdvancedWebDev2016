@@ -4,4 +4,6 @@ include _includes/sharedHTMLfunctions
 
 block content
     h1=title
-    +outputReviews(results)
+    p=removed
+    div.table-responsive
+        +outputEmployees(results)

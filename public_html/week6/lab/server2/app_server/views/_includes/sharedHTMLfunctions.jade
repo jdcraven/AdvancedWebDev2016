@@ -1,28 +1,41 @@
-mixin outputReviews(results)
-    table(border="1")
+mixin outputEmployees(results)
+       
+     table.table.table-bordered.table-striped.employeetablecss(border="1")
         thead   
             tr
-                th Author
-                th Rating
-                th Review Text
+                th First Name
+                th Last Name
+                th Department
+                th Start Date
+                th Job Title
+                th Salary
                 th Created On
+                
         tbody
         - each stuff in results
             tr
                 td 
-                    = stuff.author
+                    = stuff.firstName
                 td 
-                    = stuff.rating
+                    = stuff.lastName
+                td
+                    = stuff.department
+                td                         
+                    +formatDate(stuff.startDate)                        
+                td
+                    = stuff.jobTitle
+                td
+                    = stuff.salary.toString()
                 td 
-                    = stuff.reviewText
-                td 
-                    +formatDate(stuff.createdOn)           
+                    +formatDate(stuff.createdOn)
+                
 
-mixin formatDate(dateString)
-  -var date = new Date(dateString);
-  -var d = date.getDate();
-  -var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
-  -var m = monthNames[date.getMonth()];
-  -var y = date.getFullYear();
-  -var output = m + ' ' + d + ' ' + y;
-  =output
+
+    mixin formatDate(dateString)
+      -var date = new Date(dateString);
+      -var d = date.getDate();
+      -var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+      -var m = monthNames[date.getMonth()];
+      -var y = date.getFullYear();
+      -var output = m + ' ' + d + ' ' + y;
+      =output

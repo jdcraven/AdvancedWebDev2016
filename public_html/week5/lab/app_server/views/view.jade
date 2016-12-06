@@ -29,16 +29,24 @@ block content
                     td
                         = stuff.department
                     td                         
-                        = stuff.startDate.toDateString()                        
+                        +formatDate(stuff.startDate)                        
                     td
                         = stuff.jobTitle
                     td
                         = stuff.salary.toString()
                     td 
-                        =stuff.createdOn.toDateString()
+                        +formatDate(stuff.createdOn)
                     td
                         a(href="../update/#{stuff._id}") Update
                     td
                         a(href="../view/#{stuff._id}") Delete
 
+mixin formatDate(dateString)
+  -var date = new Date(dateString);
+  -var d = date.getDate();
+  -var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+  -var m = monthNames[date.getMonth()];
+  -var y = date.getFullYear();
+  -var output = m + ' ' + d + ' ' + y;
+  =output
                 

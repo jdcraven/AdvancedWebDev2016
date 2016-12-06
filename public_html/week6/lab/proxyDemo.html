@@ -28,16 +28,28 @@
         <br />
         <br />
         Resource for endpoint:<br />
-        <input name="resource" value="reviews/" />
+        <input name="resource" value="employees/" />
         <br />
         <br />
         Data(optional):<br />   
-        Author <input type="text" name="author" value="" />
+        First Name <input type="text" name="firstName" />
         <br />
-        Rating <input type="text" name="rating" list="ratings" placeholder="5">        
+        Last Name <input type="text" name="lastName" />        
         <br />
-        Review Text <input type="text" name="reviewText" >
+        Department <select  name="department" >
+                        <option value="Ops">Ops</option>
+                        <option value="Web Services">Web Services</option>
+                        <option value="Administration">Administration</option>
+                        <option value="Customer Service">Customer Service</option>
+                        <option value="Sales">Sales</option>
+                        <option value="Human Resources">Human Resources</option>
+                    </select>
         <br />
+        Start Date <input type="date" name="startDate" />
+        <br />
+        Job Title <input type="text" name="jobTitle" />
+        <br />
+        Salary <input type="number" name="salary" />
         <br />
         <button>Make Call</button>
         <h3>Results</h3>
@@ -63,9 +75,12 @@
                 var verb = verbfield.options[verbfield.selectedIndex].value;
                 var resource = document.querySelector('input[name="resource"]').value;
                 var data = {
-                    'author' : document.querySelector('input[name="author"]').value,
-                    'rating' : document.querySelector('input[name="rating"]').value,
-                    'reviewText' : document.querySelector('input[name="reviewText"]').value
+                    'firstName' : document.querySelector('input[name="firstName"]').value,
+                    'lastName' : document.querySelector('input[name="lastName"]').value,
+                    'department' : document.querySelector('select[name="department"]').value,
+                    'startDate' : document.querySelector('input[name="startDate"]').value,
+                    'jobTitle' : document.querySelector('input[name="jobTitle"]').value,
+                    'salary' : document.querySelector('input[name="salary"').value
                 };            
                 var results = document.querySelector('textarea[name="results"]');
 

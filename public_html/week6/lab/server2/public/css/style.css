@@ -1,10 +1,31 @@
 
 body {
     background-color: #285e8e;
-    color: #faebcc;
+    
+    //color: #faebcc;
+}
+h1{
+    color: white;
 }
 
-table tbody tr:hover {
-    background-color: orange;
-    color: black;
+p {
+    color: white;
+}
+p a {
+    color: white;
+}
+
+img {
+    height: 100px;
+}
+
+.formstyle {
+    color: white;   
+}
+.resultsstyle {
+    color: white;
+}
+.employeetablecss {
+    
+    background-color: lightgray;
 }

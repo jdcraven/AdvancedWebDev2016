@@ -27,10 +27,10 @@ module.exports.employeesReadAll = function(req, res) {
 
 module.exports.employeesReadOne = function(req, res) {
     
-    if (req.params && req.params.reviewid) {
+    if (req.params && req.params.employeeid) {
       console.log('Getting single Employee with id =', req.params.employeeid );
       Employee
-      .findById(req.params.reviewid)
+      .findById(req.params.employeeid)
       .exec(function(err, results){
 
           if ( results ) {
