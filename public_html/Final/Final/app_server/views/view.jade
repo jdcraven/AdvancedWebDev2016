@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    h1=title
+    p
+        a(href="../") Add Product
+    p=removed
+    div.table-responsive
+        table.table.table-bordered.table-striped.employeetablecss(border="1")
+            thead   
+                tr
+                    th Product Name
+                    th Product Description
+                    th Price
+                    th Created On
+            tbody
+            - each stuff in results             
+                tr
+                    
+                    td 
+                        = stuff.productName
+                    td 
+                        = stuff.productDescription
+                    td
+                        = stuff.price.toString()                    
+                    td 
+                        +formatDate(stuff.createdOn)
+                    
+
+mixin formatDate(dateString)
+  -var date = new Date(dateString);
+  -var d = date.getDate();
+  -var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+  -var m = monthNames[date.getMonth()];
+  -var y = date.getFullYear();
+  -var output = m + ' ' + d + ' ' + y;
+  =output

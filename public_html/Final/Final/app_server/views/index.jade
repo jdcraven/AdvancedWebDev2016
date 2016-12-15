@@ -1,0 +1,20 @@
+extends layout
+
+block content
+ .formstyle
+    h1=title
+   
+    p 
+     a(href="./view") View Employees
+    h2=message
+    form.form-vertical(action="/", method="post", role="form")
+           .form-group
+             label.control-label(for="productName") Product Name:
+               input#productName.form-control(name="productName")
+           .form-group
+             label.control-label(for="productDescription") Product Description:
+               input#productDescription.form-control(name="productDescription")           
+           .form-group
+             label.control-label(for="price") Price:
+               input#price.form-control(name="price" type="number")
+           input.btn.btn-default(type="submit" value="Add Product") 
